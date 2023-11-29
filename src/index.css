@@ -1,13 +1,142 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;
+
+  }
+  body{
+    @apply bg-gray-50;
+}
+  .logo{
+    width: 120px;
+    height: 120px;
+  }
+  .boldtxt{
+    padding-top: 15px;
+    padding-bottom: 15px;
+ }
+ .shopbtn{
+  margin-top: 20px;
+  padding: 14px 80px 14px 65px;
+  background-color: transparent;
+  border: 0px;
+  width: max-content;
+  background-image: url("./assets/button.png");
+  cursor: pointer;
+}
+.topbanner{
+  background-image: url('./assets/b1.jpg');
+  height: 300px;
+  margin: 5px;
+}
+.inptxt{
+
+  height: 40px;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+ }
+ .inpdiv{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 500px;
+ }
+ .searchbtn{
+  position: absolute;
+  right: 10px;
+ }
+ .topbanner2 {
+  background-image: url('./assets/b2.jpg');
+  height: 300px;
+  margin: 5px;
+ }
+ .topbanner3 {
+  background-image: url('./assets/b3.png');
+  height: 300px;
+  margin: 5px;
+ }
+ .imgcard{
+  width: 200px;
+  height: 200px;
+}
+.btn{
+  width: 50px;
+  height: 50px;
+  background-color: lightblue;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: white;
+ 
+
+}
+.button{
+  display: flex;
+  gap: 10px;
+
+}
+.imgblog{
+  height: 250px;
+  width: 450px;
+}
+.stroke{
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(to right, #3f3736, #b89744);
+  border-radius: 8px;
+}
+.gradient-text {
+  background: linear-gradient(to right, #3f3736, #856f35);
+  -webkit-background-clip: text;
+  color: transparent; /* Hide the original text color */
+  cursor: pointer;
+}
+.showmore{
+  padding: 2px;
+ background: linear-gradient(to right, #3f3736, #b89744);
+  width: 200px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.card:hover{
+  transform: translateY(-10px);
+
+}
+.card{
+  transition:transform .6s
+}
+.productcards{
+  width: 400px;
+  height: 400px;
+}
+.navbtn {
+display: flex;
+justify-content: center;
+align-items: center;
+background-color:  #d2e8d3;
+border-radius: 8px;
+}
+option{
+  outline: none;
+  padding: 10px;
+}
+input{
+  outline: none;
+  padding: 10px;
+}
+.active-link{
+  background-color: lightblue;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }

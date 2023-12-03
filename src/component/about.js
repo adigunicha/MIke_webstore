@@ -1,4 +1,4 @@
-import Searchbar from '../component/searchbar';
+
 const About = () => {
     return ( 
         <div>
@@ -8,7 +8,7 @@ const About = () => {
         
           {/* searchbarcomponent */}
         <div className="component my-5  text-base flex items-center justify-center">
-        <Searchbar />
+   
       </div>
 
     </div>

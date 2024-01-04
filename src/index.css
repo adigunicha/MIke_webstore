@@ -138,5 +138,37 @@ input{
 .active-link{
   background-color: lightblue;
 }
+.blogimg{
+  height: 400px;
+  width: 600px;
+  border-radius: 8px;
+}
+.blogimgcard{
+  height: 440px;
+  width: 600px;
+}
+.input-email{
+   height:50px ;
+   width: 300px;
+   outline: none;
+}
+.signbtn{
+  border-radius: 0px 8px 8px 0px;
+  height: 50px;
+  width: 120px;
+}
+ a .active{
+  background-color: green;
+}
+.cartimg{
+  height:60px;
+  width: 60px;
+  border-radius: 8px;
+  box-shadow: inset;
+}
+.delimg{
+  height: 25px;
+  width: 25px;
+}
 
 }

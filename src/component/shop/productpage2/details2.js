@@ -5,6 +5,8 @@ import Quantity from "../../quantity";
 import Totalprice from "../../totalprice";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useState } from "react";
+import { useDispatch,useSelector } from "react-redux";
+import { Addtocart } from "../../../redux/cartSlice";
 const ProductDetails = () => {
     const {id} = useParams()
     const {data,loading} = useFetch('http://localhost:8000/product/'+id)
@@ -12,6 +14,17 @@ const ProductDetails = () => {
     const handleClick =(data)=>{
          setquantity(data)
     }
+    const dispatch = useDispatch()
+    const addCart=()=>{
+       const modifieddata={
+            id:data.id,
+            img:data.Image,
+            title:data.title,
+            price:data.price
+        }
+        dispatch(Addtocart(modifieddata))
+    }
+
     return ( 
         <div>
              <div >
@@ -29,10 +42,10 @@ const ProductDetails = () => {
             <span className="text-base font-medium">{ data.category }</span>
         <span className="text-lg font-semibold"> { data.title }</span>
        <span className="text-xl font-bold">   ${data.price }</span>
-       <Sizebar/>
+       {/* <Sizebar/>
        <Quantity sendDataToParent={handleClick}/>
-       <Totalprice childQuantity={childQuantity} price={data.price} />
-        <Link to="/" className="navbtn p-5 font-bold" >Add to cart </Link>
+       <Totalprice childQuantity={childQuantity} price={data.price} /> */}
+        <button onClick={addCart} className="navbtn p-5 font-bold" >Add to cart </button>
        <div className="productdescritption flex gap-3 flex-col mt-3">
            <h1 className="font-bold text-2xl">Product Details</h1>
            <span className="">{ data.description }</span>

@@ -2,6 +2,7 @@ import Searchbar from './blogsearchbar';
 import useFetch from './fetch';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import  { useState } from 'react';
+import Footer from './footer';
 const Blog = () => {
   const {data} = useFetch(' http://localhost:8000/blog')
   const {data:product}=useFetch('http://localhost:8000/blogtwo')
@@ -40,8 +41,11 @@ const Blog = () => {
     {/*  the blog post  */}
     <div class="pl-5 pt-5 grid gap-5 ">
       { filteredData.map((blog)=>(
+      
              <div className=" relative card gap-5  p-5 rounded-md bg-white flex items-center flex-row h-full justify-start shadow-sm  "key={blog.id}>
+               
              <div className="max-w-lg" >
+             
                  <img className="imgblog" src={blog.img} alt={blog.id}/>
                 </div>
                 <div className=" max-w-screen-md flex flex-col gap-5 ">
@@ -49,7 +53,8 @@ const Blog = () => {
                 <p className="truncate text-gray-600"> { blog.description } </p> 
             
                <div className="continue-btn flex flex-row gap-3 items-center">
-                <Link to="/"  className=" gradient-text font-semibold">Continue reading</Link>       
+               <Link to={`/blogs/${blog.id}`}className=" gradient-text font-semibold">Continue reading
+               </Link>       
                    <div className="stroke "></div>
                 </div>  
                 </div>
@@ -75,7 +80,7 @@ const Blog = () => {
                 <p className="truncate text-gray-600"> { blog.description } </p> 
             
                <div className="continue-btn flex flex-row gap-3 items-center">
-                <Link to="/"  className=" gradient-text font-semibold">Continue reading</Link>       
+                <Link to={`/blogstwo/${blog.id}`}  className=" gradient-text font-semibold">Continue reading</Link>       
                    <div className="stroke "></div>
                 </div>  
                 </div>
@@ -94,6 +99,9 @@ const Blog = () => {
             {showmore ? 'Show Less' : 'Show More'}
         
       </div> }
+      <div className="w-full ">
+       { data && <Footer/> }
+         </div>
         </div>
      );
 }

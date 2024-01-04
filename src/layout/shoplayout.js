@@ -3,9 +3,12 @@ import React from 'react';
 import Navbar from '../component/navbar';
 import Shop from '../component/shop/productpage1/product1';
 import Searchbar from '../component/productsearchbar';
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link, NavLink } from "react-router-dom/cjs/react-router-dom";
+import useFetch from '../component/fetch';
+import Footer from '../component/footer';
 const BLoglayout = ({children}) => {
   const [search,setsearch]=useState('')
+  const {data} = useFetch('https://fakestoreapi.com/products')
   const searchaction=(value)=>{
       setsearch(value)
       console.log(search)
@@ -28,12 +31,15 @@ const BLoglayout = ({children}) => {
         {children}
    
         </div>
-        <div className="button m-5 flex items-center justify-center">
+      <div className="button m-5 flex items-center justify-center">
    
-   <Link  className="btn shadow-sm"  to="/shop/product1">1</Link>
+   <NavLink  className="btn shadow-sm"  to="/shop/product1">1</NavLink>
  
-   <Link  className="btn shadow-sm" to="/shop/product2">2</Link>
+   <NavLink  className="btn shadow-sm" to="/shop/product2">2</NavLink>
  </div>
+ <div className="w-full ">
+       { data && <Footer/> }
+         </div>
         </div>
      );
 }

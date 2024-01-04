@@ -1,7 +1,11 @@
  import { Link } from "react-router-dom/cjs/react-router-dom";
  import Image from "../assets/mikelogo (2).png"
+ import Cartimg from '../assets/cart.svg'
+ import { useSelector } from "react-redux";
 
 const Navbar = () => {
+    const cartnumber = useSelector(items=>items.cart.cart)
+ 
     return ( 
         <div className="">
             <nav className="flex  justify-between items-center flex-row py-5 px-12 shadow-sm bg-white ">
@@ -15,8 +19,12 @@ const Navbar = () => {
             <Link to="/"> Home </Link>  
             <Link to="/shop/product1"> Shop </Link> 
             <Link to="/blog"> Blog</Link>    
-            <Link to="/about"> About </Link>  
-            <Link to="/contact">Contact </Link>    
+            <Link to="/about"> About </Link>     
+            <Link to="/checkout"> 
+            <div className="relative  pr-5 py-5 ">
+            <span className="absolute right-1.5 top-2.5 ">{cartnumber.length}</span>
+            <img src={Cartimg} alt="cart"/> 
+                </div> </Link>  
             </div>
 
             </nav>

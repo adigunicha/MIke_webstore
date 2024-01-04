@@ -2,6 +2,7 @@ import useFetch from "../../fetch";
 import Star from "../../../assets/star.svg"
 import Cart from "../../../assets/cart.svg"
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Footer from "../../footer";
 const Shop = ({searchValue}) => {
  const {data,loading} = useFetch('https://fakestoreapi.com/products')
     return ( 
@@ -37,6 +38,7 @@ const Shop = ({searchValue}) => {
            ))}
            {searchValue}
         </div>
+       
         </div>
      );
 }

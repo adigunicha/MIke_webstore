@@ -2,6 +2,7 @@ import useFetch from "../../fetch";
 import Star from "../../../assets/star.svg"
 import Cart from "../../../assets/cart.svg"
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Footer from "../../footer";
 const Shop2 = () => {
     const {data,loading} = useFetch('http://localhost:8000/product')
     return ( 

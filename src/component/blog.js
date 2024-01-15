@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom';
 import  { useState } from 'react';
 import Footer from './footer';
 const Blog = () => {
-  const {data} = useFetch(' http://localhost:8000/blog')
+  const {data,loading} = useFetch(' http://localhost:8000/blog')
   const {data:product}=useFetch('http://localhost:8000/blogtwo')
   const [showmore,setShow]= useState(false)
   const [search,setSearch]= useState('')
@@ -27,6 +27,9 @@ const Blog = () => {
   ) : [];
     return ( 
         <div className=''>
+           <div >
+            {loading && <div className=" font-bold text-xl flex items-center justify-center py-20">loading...</div>}
+         </div>
            <div className="topbanner2 md:m-3 m-1 rounded-md md:h-[300px] h-[200px] relative flex items-center justify-center text-2xl flex-col ">
         <span className=" py-5 text-white font-bold  ">#BlogPost</span>
         <span className="text-white text-sm">Read all case study about our product!</span>

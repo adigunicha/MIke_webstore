@@ -29,13 +29,10 @@ const Navbar = () => {
       <div className=" overflow-x-hidden font-poppins">
       <nav className="bg-white shadow   text-black fixed p-4   md:p-7  sm:h-auto sm:w-full w-screen z-20 border-b border-gray-400">
         <div className="flex flex-col gap-5 md:gap-0  md:flex-row flex-wrap md:items-center justify-between">
-          <NavLink to='/' >
-          <div className="flex flex-wrap flex-row items-center">
-            <img 
+          <Link  className=' w-[60px] md:w-[100px]' to='/' >
+          <img 
                 className="logo w-[60px] h-[60px] md:w-[100px] md:h-[100px]" src={Image} alt="logo"/>
-            
-            </div>
-          </NavLink >
+            </Link >
            
            {/* menubar */}
           <div className="flex items-center flex-row md:hidden ">

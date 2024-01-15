@@ -3,13 +3,13 @@ import Footer from './footer';
 const About = () => {
     return ( 
         <div>
-    <div className="topbanner3 relative flex items-center justify-center text-2xl flex-col ">
+    <div className="topbanner3 md:h-[300px] h-[200px] relative flex items-center justify-center text-2xl flex-col ">
         <span className=" py-5 text-white font-bold  ">#KnowUs</span>
         <span className="text-white text-sm">Know everything about our store!</span>
         
 
     </div>
-    <div className="grid grid-cols-2 gap-5 m-5 pl-5">
+    <div className="grid md:grid-cols-2 gap-5 m-5 md:pl-5">
    <div className>
     <img className="heropics" src={Aboutimg} alt="aboutuspics"/>
    </div>

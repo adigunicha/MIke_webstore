@@ -13,10 +13,7 @@
   body{
     @apply bg-gray-50;
 }
-  .logo{
-    width: 120px;
-    height: 120px;
-  }
+
   .boldtxt{
     padding-top: 15px;
     padding-bottom: 15px;
@@ -33,7 +30,6 @@
 .topbanner{
   background-image: url('./assets/b1.jpg');
   height: 300px;
-  margin: 5px;
 }
 .inptxt{
 
@@ -48,21 +44,14 @@
     position: relative;
     display: flex;
     align-items: center;
-    width: 500px;
- }
- .searchbtn{
-  position: absolute;
-  right: 10px;
  }
  .topbanner2 {
   background-image: url('./assets/b2.jpg');
   height: 300px;
-  margin: 5px;
  }
  .topbanner3 {
   background-image: url('./assets/b3.png');
-  height: 300px;
-  margin: 5px;
+
  }
  .imgcard{
   width: 200px;
@@ -91,7 +80,7 @@
   width: 450px;
 }
 .stroke{
-  width: 100px;
+ 
   height: 5px;
   background: linear-gradient(to right, #3f3736, #b89744);
   border-radius: 8px;
@@ -116,10 +105,7 @@
 .card{
   transition:transform .6s
 }
-.productcards{
-  width: 400px;
-  height: 400px;
-}
+
 .navbtn {
 display: flex;
 justify-content: center;
@@ -138,18 +124,9 @@ input{
 .active-link{
   background-color: lightblue;
 }
-.blogimg{
-  height: 400px;
-  width: 600px;
-  border-radius: 8px;
-}
-.blogimgcard{
-  height: 440px;
-  width: 600px;
-}
+
 .input-email{
    height:50px ;
-   width: 300px;
    outline: none;
 }
 .signbtn{
@@ -169,6 +146,11 @@ input{
 .delimg{
   height: 25px;
   width: 25px;
+}
+.newarrivalimg{
+  height: 150px;
+  width: 150px;
+  border-radius: 8px;
 }
 
 }

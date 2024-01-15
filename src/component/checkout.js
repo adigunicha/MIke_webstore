@@ -26,14 +26,22 @@ const Checkout = () => {
             }));
         
     }
+    const calculateTotalPrice = () => {
+        let totalPrice = 0;
+        cartItems.forEach((item) => {
+          const quantity = itemCounts[item.id] || 1;
+          totalPrice += item.price * quantity;
+        });
+        return totalPrice.toFixed(2); // Round to 2 decimal places
+      };
     return (
-        <div className="flex flex-row">
-            <div className="basis-8/12" >
-            <div className=" m-5 p-10 rounded-md bg-white shadow grid auto-rows-auto">
+        <div className="flex flex-col md:flex-row">
+            <div className="md:basis-8/12" >
+            <div className=" m-5 p-3 md:p-10 rounded-md bg-white shadow grid md:auto-rows-auto">
                 <span className=" mb-3 text-2xl" >Cart ({cartItems.length})</span>
              {cartItems.map(items=>(
                 <div key={items.id} className=" relative cartgrid border-t py-5  ">
-                    <div  className="flex flex-row items-center gap-3 w-2/3 "> 
+                    <div  className="flex flex-col md:flex-row  gap-3 w-2/3 "> 
                     <img className="cartimg" src={items.img} alt={items.title}/>
                   <div className="flex flex-col gap-2">
                   <span>{items.title}</span>
@@ -61,13 +69,13 @@ const Checkout = () => {
              ))}
             </div>
             </div>
-            <div className=" sticky  basis-2/5">
-             <div className=" relative m-5 p-10 rounded-md bg-white shadow grid auto-rows-auto">
+            <div className=" md:block hidden  md:basis-2/5">
+             <div className=" relative mr-2 mt-3 md:m-5 p-10 rounded-md bg-white shadow grid auto-rows-auto">
                 <span className="mb-3 text-2xl">Cart Summary</span>
                 <div className="relative flex flex-col gap-3 border-t py-5">
                     <span className="text-lg" >Subtotal</span>
-                    <div className="absolute top-5 right-5">
-                    <span className="text-lg" >$7,500</span>
+                    <div className="absolute top-5 md:right-5">
+                    <span className="text-lg" >{calculateTotalPrice()}</span>
                 </div>
                     <span className="text-xs" >Delivery fees not included yet</span>
                     <div className="border-t py-5">
@@ -77,7 +85,13 @@ const Checkout = () => {
                
                 </div>
             </div>
+
+            {/* checkout for mobile phones */}
+            <div className=" mb-5 mx-5 md:hidden">
+              <button className="py-3 rounded-lg w-full bg-yellow-500 font-semibold ">CHECKOUT ${calculateTotalPrice()}</button>
+            </div>
         </div>
+        
     );
 }
  

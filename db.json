@@ -192,6 +192,73 @@
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat earum neque culpa officiis necessitatibus aut repellendus ipsam dolores natus recusandae veniam vitae eligendi deleniti, ea veritatis animi cum eaque enim Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores voluptatibus et suscipit molestiae impedit dolor cupiditate earum! Doloremque obcaecati recusandae nihil distinctio consequatur odio at beatae corporis quos repellat quis qui architecto minus magnam, cupiditate, est enim tempore! Quaerat odit alias non quasi. Cumque neque harum modi ratione, placeat ipsa?!",
             "id":"10"
         }
+    ],
+    "NewArrivals":[
+  
+        {
+            "category":"Mens Clothing",
+            "Image": "https://i.pinimg.com/236x/6d/44/79/6d4479d871511537b9fa90b8dfbc87c9.jpg",
+            "title":"'Manfity Japanese shirt",
+            "price": "50",
+            "id":"31",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit laborum nostrum consequuntur quod, animi saepe ex sapiente pariatur similique accusantium."
+        },
+        {
+            "category":"Mens Clothing",
+            "Image": "https://i.pinimg.com/236x/01/a2/b0/01a2b01f3a9ac498551b50b568284274.jpg",
+            "title":"Black Jeans trouser",
+            "price": "35",
+            "id":"32",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit laborum nostrum consequuntur quod, animi saepe ex sapiente pariatur similique accusantium."
+        },
+        {
+            "category":"Mens Clothing",
+            "Image": "https://i.pinimg.com/236x/3f/17/89/3f1789be985a9f31222628d929b098e8.jpg",
+            "title":"'Manfity Japaneese shirt",
+            "price": "25",
+            "id":"33",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit laborum nostrum consequuntur quod, animi saepe ex sapiente pariatur similique accusantium."
+        },
+        {
+            "category":"Mens Clothing",
+            "Image": "https://i.pinimg.com/236x/0e/84/3b/0e843b1200d8eca6ecdc64a07b397f76.jpg",
+            "title":"Manfity T-shirt ",
+            "price": "20",
+            "id":"34",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit laborum nostrum consequuntur quod, animi saepe ex sapiente pariatur similique accusantium."
+        },
+        {
+            "category":"Mens Clothing",
+            "Image": "https://i.pinimg.com/236x/9a/4f/f2/9a4ff25f3a1605808a40684ef59e77f7.jpg",
+            "title":"Manfity Japanese shirt",
+            "price": "95",
+            "id":"35",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit laborum nostrum consequuntur quod, animi saepe ex sapiente pariatur similique accusantium."
+        },
+        {
+            "category":"Childrens Clothing",
+            "Image": "https://i.pinimg.com/236x/0c/fa/f6/0cfaf62e503a550f5d0cf5dac9a8c310.jpg",
+            "title":"Manfity Japanese Polo",
+            "price": "15",
+            "id":"36",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit laborum nostrum consequuntur quod, animi saepe ex sapiente pariatur similique accusantium."
+        },
+        {
+            "category":"Mens Clothing",
+            "Image": "https://i.pinimg.com/236x/69/a8/64/69a864910e6e219cf46748cdff47a9d2.jpg",
+            "title":"plane white hoodie",
+            "price": "24",
+            "id":"30",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit laborum nostrum consequuntur quod, animi saepe ex sapiente pariatur similique accusantium."
+        },
+        {
+            "category":"Mens Clothing",
+            "Image": "https://i.pinimg.com/236x/6d/44/79/6d4479d871511537b9fa90b8dfbc87c9.jpg",
+            "title":"'Manfity Japanese shirt",
+            "price": "50",
+            "id":"31",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit laborum nostrum consequuntur quod, animi saepe ex sapiente pariatur similique accusantium."
+        }
     ]
 
 }

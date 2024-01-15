@@ -10,7 +10,6 @@ const ProductDetails = () => {
     const {id} = useParams()
     const {data,loading} = useFetch('https://fakestoreapi.com/products/'+id)
     const [isAddedToCart, setAddedToCart] = useState(false);
-    const {btndisabled,setbtn}=useState(true)
     // const [childQuantity,setquantity]= useState('')
     // const handleClick =(data)=>{
     //      setquantity(data)
@@ -20,12 +19,9 @@ const ProductDetails = () => {
     useEffect(() => {
         // Check if the current product is in the cart
         const isProductInCart = cartItems.some((item) => data && item.id === data.id);
-        if(isProductInCart===true){
-
-        }
         setAddedToCart(isProductInCart);
         console.log(id)
-      }, [id,cartItems]);
+      }, [isAddedToCart,cartItems]);
 
     const handleCart=()=>{
         const modifiedData={
@@ -35,6 +31,7 @@ const ProductDetails = () => {
             price:data.price
         }
         dispatch(Addtocart(modifiedData))  
+        setAddedToCart(true)
            
     }
   
@@ -46,12 +43,12 @@ const ProductDetails = () => {
 
      
          { data && (
-                <div className="grid grid-cols-2">
-           <div className="imgcontainer shadow-sm rounded-md bg-white py-5 justify-center items-center flex m-8">
-           <img className="productcards " src={data.image} alt="productimage"/>
+                <div className="grid md:grid-cols-2">
+           <div className="imgcontainer shadow rounded-md bg-white py-5 justify-center items-center flex m-3 px-3 md:m-8">
+           <img className="productcards md:w-[400px] md:h-[400px] w-[250px] h-[250px] " src={data.image} alt="productimage"/>
          </div>
 
-            <div className="productdetails gap-4 flex flex-col m-10">
+            <div className="productdetails gap-3 md:gap-4  flex flex-col m-3 md:m-10">
             <span className="text-base font-medium">{ data.category }</span>
         <span className="text-lg font-semibold"> { data.title }</span>
        <span className="text-xl font-bold">   ${data.price }</span>
@@ -59,15 +56,13 @@ const ProductDetails = () => {
        <Quantity sendDataToParent={handleClick}/>
        <Totalprice childQuantity={childQuantity} price={data.price} /> */}
      
-     { btndisabled &&   <button onClick={handleCart} className="navbtn p-5 font-bold">
-                Add to cart
-              </button> }
-
-     {isAddedToCart && (
+     {isAddedToCart ? (
               <span className="text-green-400">Product added successfully!</span>
+            ) : (
+              <button onClick={handleCart} className="navbtn p-5 font-bold">
+                Add to cart
+              </button>
             )}
-         
-            
        <div className="productdescritption flex gap-3 flex-col mt-3">
            <h1 className="font-bold text-2xl">Product Details</h1>
            <span className="">{ data.description }</span>

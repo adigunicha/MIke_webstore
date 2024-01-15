@@ -17,7 +17,7 @@ const BLoglayout = ({children}) => {
         <div>
                
       <Navbar/>
-      <div className="topbanner relative flex items-center justify-center text-2xl flex-col ">
+      <div className="topbanner  mt-[100px] md:mt-[150px]  md:m-3 m-1 md:h-[300px] h-[200px]  relative flex items-center justify-center text-2xl flex-col ">
         <span className=" py-5 text-white font-bold  ">#FeaturedProduct</span>
         <span className="text-white text-sm">Save more with coupons & up to 70% off!</span>
         
@@ -27,7 +27,7 @@ const BLoglayout = ({children}) => {
       </div>
 
     </div>
-        <div>
+        <div >
         {children}
    
         </div>

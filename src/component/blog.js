@@ -27,9 +27,6 @@ const Blog = () => {
   ) : [];
     return ( 
         <div className=''>
-           <div >
-            {loading && <div className=" font-bold text-xl flex items-center justify-center py-20">loading...</div>}
-         </div>
            <div className="topbanner2 md:m-3 m-1 rounded-md md:h-[300px] h-[200px] relative flex items-center justify-center text-2xl flex-col ">
         <span className=" py-5 text-white font-bold  ">#BlogPost</span>
         <span className="text-white text-sm">Read all case study about our product!</span>
@@ -40,7 +37,9 @@ const Blog = () => {
       </div>
 
     </div>
-
+    <div >
+            {loading && <div className=" font-bold text-xl flex items-center justify-center py-20">loading...</div>}
+         </div>
     {/*  the blog post  */}
     <div class="p-5 pb-0 grid gap-5 ">
       { filteredData.map((blog)=>(

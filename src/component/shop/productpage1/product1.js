@@ -13,7 +13,7 @@ const Shop = ({searchValue}) => {
          </div>
 
 
-        <div className="productcard  grid md:grid-cols-4 grid-cols-2 gap-2 md:gap-4 m-5">
+        <div className="productcard  grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-2 md:gap-4 m-5">
            {data && data.map(ele => (
             <Link to={`/shop/productone/${ele.id}`}>
              <div key={ele.id} className=" flex-wrap overflow-x-hidden card p-3 rounded-md bg-white flex items-center flex-col h-full shadow-md"  >

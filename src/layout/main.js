@@ -3,7 +3,7 @@ const Mainlayout = ({ children }) => {
     return ( 
         <div>
          <Navbar/>
-       <div className=' mt-[100px] md:mt-[150px] w-full'>
+       <div className=' mt-[100px] lg:mt-[150px] w-full overflow-x-hidden'>
        {children}
        </div> 
       

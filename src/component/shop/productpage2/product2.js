@@ -13,7 +13,7 @@ const Shop2 = () => {
         </div>
 
 
-       <div className="productcard  grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 m-5">
+       <div className="productcard  grid md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-2 md:gap-4 m-5">
           {data && data.map(ele => (
             <Link to={`/shop/producttwo/${ele.id}`}>
             <div key={ele.id} className="  card p-3 rounded-md bg-white flex items-center flex-col h-full justify-start shadow-sm"  >

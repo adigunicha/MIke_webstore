@@ -23,7 +23,7 @@ const Footer = () => {
                
             </div>
 
-            <div className=" md:mt-5 gap-5 grid md:grid-cols-4 p-5 md:p-10">
+            <div className=" md:mt-5 gap-5 grid md:grid-cols-4 grid-cols-2 p-5 md:p-10">
                 <div className="flex space-y-3  flex-col">
                     <span className="font-semibold text-xl">Contact</span>
                     <p className="text-sm"><span className="font-medium text-sm">Address:</span> Willinghton street 32 Francisco</p>

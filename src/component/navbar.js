@@ -27,15 +27,15 @@ const Navbar = () => {
  
     return ( 
       <div className=" overflow-x-hidden font-poppins">
-      <nav className="bg-white shadow   text-black fixed p-4   md:p-7  sm:h-auto sm:w-full w-screen z-20 border-b border-gray-400">
+      <nav className="bg-white shadow-sm  text-black fixed p-4   md:p-7  sm:h-auto sm:w-full w-screen z-20 border-b border-gray-400">
         <div className="flex flex-col gap-5 md:gap-0  md:flex-row flex-wrap md:items-center justify-between">
           <Link  className=' w-[60px] md:w-[100px]' to='/' >
           <img 
-                className="logo w-[60px] h-[60px] md:w-[100px] md:h-[100px]" src={Image} alt="logo"/>
+                className="logo w-[60px] h-[60px] lg:w-[100px] lg:h-[100px]" src={Image} alt="logo"/>
             </Link >
            
            {/* menubar */}
-          <div className="flex items-center flex-row md:hidden ">
+          <div className="flex items-center flex-row lg:hidden ">
             <div className=' flex justify-between '>
                <button className='absolute top-10  right-12' to='' onClick={()=>{setopen(!open)}} ><CiMenuBurger size={20} /></button>
                <Link to="/checkout"> 
@@ -47,7 +47,7 @@ const Navbar = () => {
                </div>
              
              {/* desktop nav */}
-         <div className={ ` hidden sm:h-3 md:flex  pl-3 md:pl-0 space-y-6 md:space-y-0 flex-col md:flex-row md:space-x-6 font-semibold text-xl md:items-center`}>
+         <div className={ ` hidden sm:h-3 lg:flex  pl-3 md:pl-0 space-y-6 md:space-y-0 flex-col md:flex-row md:space-x-6 font-semibold text-xl md:items-center`}>
              <NavLink className="hover:text-blue-400 ease-in-out duration-150 " to='/'>Home</NavLink>
              <NavLink className="hover:text-blue-400 ease-in-out duration-150  "  to='/shop/product1'>Shop</NavLink>
              <NavLink className="hover:text-blue-400 ease-in-out duration-150  "  to='/blog'>Blog</NavLink>

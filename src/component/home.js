@@ -7,9 +7,9 @@ import Cart from '../assets/cart.svg'
 const Home = () => {
   const {data}= useFetch(' http://localhost:8000/NewArrivals')
     return ( 
-      <div>
-        <div className="home pl-5 grid md:grid-cols-2 gap-5  md:gap-7  ">
-        <div className="text   md:pl-24 pt-8 md:pt-24">
+      <div className="">
+        <div className="home w-screen  grid lg:grid-cols-2 gap-5  md:gap-7  ">
+        <div className="text pl-5  lg:pl-24 pt-8 md:pt-24">
             <span className="font-bold text-sm">Trade-in-offer</span> <br/>
             <div className="boldtxt">
                 <span className=" boldtxt text-3xl md:text-5xl font-bold">Super value deals</span> <br/>
@@ -20,8 +20,8 @@ const Home = () => {
                  <span className="text-xs">Save more with coupon & up tp 70% off!</span> <br/>
                <Link to='/shop/product1' > <div className="shopbtn">Shop Now</div ></Link> 
         </div>
-        <div className=" md:pl-20 pt-3 ">
-            <img className=" md:h-[500px] md:w-[500px] w-[270px] h-[290px] rounded-lg " src={Hero} alt="heropics"/>
+        <div className=" lg:pl-20 lg:p-0  w-[99vw] p-5 pt-3 ">
+            <img className=" md:h-[500px] md:w-full w-full  h-[300px] rounded-lg " src={Hero} alt="heropics"/>
         </div>
        
         
@@ -30,7 +30,7 @@ const Home = () => {
           <h1 className="flex justify-center items-center text-2xl font-bold ">New Arrivals </h1>
           <span className="flex pt-3 justify-center items-center">Summer Collection New Modern Design</span>
        
-       <div className="grid p-5 md:mx-7 md:my-3  shadow-sm gap-2 md:gap-4 sm:grid-cols-3 grid-cols-2 md:grid-cols-4">
+       <div className="grid p-5 md:mx-7 md:my-3  shadow-sm gap-2 md:gap-4 md:grid-cols-3  lg:grid-cols-4">
         {data && data.map((items)=>(
           <Link to={`/shop/producttwo/${items.id}`}>
           <div className=" p-3 shadow-md card w-full rounded-md bg-white flex items-center flex-col h-full " key={items.id}>

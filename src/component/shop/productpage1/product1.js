@@ -18,7 +18,7 @@ const Shop = ({searchValue}) => {
             <Link to={`/shop/productone/${ele.id}`}>
              <div key={ele.id} className=" flex-wrap overflow-x-hidden card p-3 rounded-md bg-white flex items-center flex-col h-full shadow-md"  >
                <span className="w-full">
-               <img className="imgcard " src={ele.image} alt="Producimage"/>
+               <img className=" w-full h-[200px]" src={ele.image} alt="Producimage"/>
                </span>
             
             <span className="font-bold w-full flex flex-wrap justify-start "> {ele.title }</span> 

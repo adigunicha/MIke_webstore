@@ -43,7 +43,7 @@ const ProductDetails = () => {
 
      
          { data && (
-                <div className="grid md:grid-cols-2">
+                <div className="grid lg:grid-cols-2">
            <div className="imgcontainer shadow rounded-md bg-white py-5 justify-center items-center flex m-3 px-3 md:m-8">
            <img className="productcards md:w-[400px] md:h-[400px] w-[250px] h-[250px] " src={data.image} alt="productimage"/>
          </div>

@@ -20,8 +20,8 @@ const Home = () => {
                  <span className="text-xs">Save more with coupon & up tp 70% off!</span> <br/>
                <Link to='/shop/product1' > <div className="shopbtn">Shop Now</div ></Link> 
         </div>
-        <div className=" lg:pl-20 lg:p-0  w-[99vw] p-5 pt-3 ">
-            <img className=" md:h-[500px] md:w-full w-full  h-[300px] rounded-lg " src={Hero} alt="heropics"/>
+        <div className="  lg:p-0  w-[99vw] p-5 pt-3 ">
+            <img className=" md:h-[500px] lg:w-[600px]  w-full  h-[300px] rounded-lg " src={Hero} alt="heropics"/>
         </div>
        
         

@@ -7,12 +7,7 @@ import { Link, NavLink } from "react-router-dom/cjs/react-router-dom";
 import useFetch from '../component/fetch';
 import Footer from '../component/footer';
 const BLoglayout = ({children}) => {
-  const [search,setsearch]=useState('')
   const {data} = useFetch('https://fakestoreapi.com/products')
-  const searchaction=(value)=>{
-      setsearch(value)
-      console.log(search)
-  }
     return ( 
         <div>
                
@@ -23,7 +18,7 @@ const BLoglayout = ({children}) => {
         
           {/* searchbarcomponent */}
         <div className="component my-5  text-base flex items-center justify-center">
-        <Searchbar searchValue={searchaction} />
+        <Searchbar/>
       </div>
 
     </div>

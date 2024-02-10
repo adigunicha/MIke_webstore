@@ -2,23 +2,29 @@ import useFetch from "../../fetch";
 import Star from "../../../assets/star.svg"
 import Cart from "../../../assets/cart.svg"
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import Footer from "../../footer";
+import { useContext } from "react";
+import { AppContext } from "../../../App";
 const Shop2 = () => {
     const {data,loading} = useFetch('http://localhost:8000/product')
-    return ( 
+    const {searchbar} = useContext(AppContext)
 
-        <div>
+    const filterdata = data ?
+    data.filter((product)=>
+    product.title.toLowerCase().includes(searchbar.toLowerCase())
+    ) : []
+    return ( 
+       <div>
         <div >
            {loading && <div className=" font-bold text-xl flex items-center justify-center py-20">loading...</div>}
         </div>
 
 
        <div className="productcard  grid md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-2 md:gap-4 m-5">
-          {data && data.map(ele => (
+          { filterdata.map(ele => (
             <Link to={`/shop/producttwo/${ele.id}`}>
             <div key={ele.id} className="  card p-3 rounded-md bg-white flex items-center flex-col h-full justify-start shadow-sm"  >
               <span className="w-full">
-              <img className=" w-full h-[300px] " src={ele.Image} alt="Producimage"/>
+              <img className=" w-full h-[230px] " src={ele.Image} alt="Producimage"/>
               </span>
            
            <span className="font-bold w-full flex justify-start "> {ele.title }</span> 

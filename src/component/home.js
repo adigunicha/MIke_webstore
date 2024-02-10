@@ -36,7 +36,7 @@ const Home = () => {
           <div className=" p-3 shadow-md card w-full rounded-md bg-white flex items-center flex-col h-full " key={items.id}>
             <ul className="w-full">
               <li>
-                <img className=" flex justify-center newarrivalimg" src={items.Image} alt={items.title}/>
+                <img className=" flex justify-center w-full h-[230px]" src={items.Image} alt={items.title}/>
               </li>
               <li className="font-bold ">{items.title}</li>
             </ul>

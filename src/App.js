@@ -14,8 +14,10 @@ import ProductDetails from './component/shop/productpage1/details';
 import ProductDetails2 from './component/shop/productpage2/details2';
 import Blogdetails from './component/blogdetails';
 import Moredetails from './component/moreblogdetails';
-
+import { useState,createContext } from 'react';
+export const AppContext = createContext()
 function App() {
+  const [searchbar,setSearchBar] = useState('')
   return (
     <Router>
        <div className="App">
@@ -23,6 +25,7 @@ function App() {
      
      <div className=''>
       <Switch>
+        <AppContext.Provider value={{searchbar,setSearchBar}}>
         <Route exact path="/"render={()=><Mainlayout> <Home/> </Mainlayout>}/>
         <Route  path="/shop/product1" render={()=><Shoplayout> <Product1/> </Shoplayout>}/>
         <Route  path="/shop/productone/:id" render={()=><Mainlayout> <ProductDetails/> </Mainlayout>}/>
@@ -33,8 +36,7 @@ function App() {
         <Route  path="/blogstwo/:id"render={()=><Mainlayout> <Moredetails/> </Mainlayout>}/>
         <Route  path="/about"render={()=><Mainlayout> <About/> </Mainlayout>}/>
         <Route  path="/checkout"render={()=><Mainlayout> <Checkout/> </Mainlayout>}/>
-       
-  
+       </AppContext.Provider>
       </Switch>
      </div>
 

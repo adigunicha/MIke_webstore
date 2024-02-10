@@ -3,8 +3,16 @@ import Star from "../../../assets/star.svg"
 import Cart from "../../../assets/cart.svg"
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Footer from "../../footer";
-const Shop = ({searchValue}) => {
- const {data,loading} = useFetch('https://fakestoreapi.com/products')
+import { useContext } from "react";
+import { AppContext } from "../../../App";
+const Shop = () => {
+const {data,loading} = useFetch('https://fakestoreapi.com/products')
+const {searchbar} = useContext(AppContext)
+const filteredData = data
+? data.filter((blog) =>
+    blog.title.toLowerCase().includes(searchbar.toLowerCase())
+  )
+: [];
     return ( 
 
       <div>
@@ -14,11 +22,11 @@ const Shop = ({searchValue}) => {
 
 
         <div className="productcard  grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-2 md:gap-4 m-5">
-           {data && data.map(ele => (
+           {filteredData.map(ele => (
             <Link to={`/shop/productone/${ele.id}`}>
              <div key={ele.id} className=" flex-wrap overflow-x-hidden card p-3 rounded-md bg-white flex items-center flex-col h-full shadow-md"  >
                <span className="w-full">
-               <img className=" w-full h-[250px]" src={ele.image} alt="Producimage"/>
+               <img className=" w-full h-[230px]" src={ele.image} alt="Producimage"/>
                </span>
             
             <span className="font-bold w-full flex flex-wrap justify-start "> {ele.title }</span> 
@@ -36,7 +44,7 @@ const Shop = ({searchValue}) => {
              </div>
              </Link>
            ))}
-           {searchValue}
+          
         </div>
        
         </div>

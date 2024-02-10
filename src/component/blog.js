@@ -11,10 +11,8 @@ const Blog = () => {
  
   const handleShowMore = () => {
     setShow(!showmore);
-    console.log(showmore)
   };
   const datafunction = (value)=>{
-     console.log(value)
      setSearch(value)
   }
   const filteredData = data

@@ -1,11 +1,14 @@
 import { useState } from "react";
 import Image from "../assets/search.svg"
-const Searchbar = ({searchValue}) => {
+import { useContext } from "react";
+import { AppContext } from "../App";
+const Searchbar = () => {
+  const {searchbar,setSearchBar} = useContext(AppContext)
   const[search,setsearch]=useState('')
   const handlechange=(e)=>{
     const data = e.target.value
     setsearch(data)
-    searchValue(data)
+    setSearchBar(data)
   }
     return ( 
         <div>

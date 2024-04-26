@@ -2,10 +2,12 @@ import Searchbar from './blogsearchbar';
 import useFetch from './fetch';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import  { useState } from 'react';
+import { Blogtwo } from '../db';
+import { Blog } from '../db';
 import Footer from './footer';
-const Blog = () => {
-  const {data,loading} = useFetch(' http://localhost:8000/blog')
-  const {data:product}=useFetch('http://localhost:8000/blogtwo')
+const Blogpage = () => {
+  const data = Blog
+  const product = Blogtwo
   const [showmore,setShow]= useState(false)
   const [search,setSearch]= useState('')
  
@@ -35,9 +37,9 @@ const Blog = () => {
       </div>
 
     </div>
-    <div >
+    {/* <div >
             {loading && <div className=" font-bold text-xl flex items-center justify-center py-20">loading...</div>}
-         </div>
+         </div> */}
     {/*  the blog post  */}
     <div class="p-5 pb-0 grid gap-5 ">
       { filteredData.map((blog)=>(
@@ -106,4 +108,4 @@ const Blog = () => {
      );
 }
  
-export default Blog;
+export default Blogpage;

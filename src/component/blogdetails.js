@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom";
-import useFetch from "./fetch";
+import { Blog } from "../db";
 
 const Blogdetails = () => {
     const {id} = useParams()
-    const {data} = useFetch('http://localhost:8000/blog/'+id)
+    const data = Blog.find((e)=>e.id===id)
     
     return (  
       <div>

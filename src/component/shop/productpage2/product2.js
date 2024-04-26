@@ -1,11 +1,11 @@
-import useFetch from "../../fetch";
 import Star from "../../../assets/star.svg"
 import Cart from "../../../assets/cart.svg"
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { product } from "../../../db";
 import { useContext } from "react";
 import { AppContext } from "../../../App";
 const Shop2 = () => {
-    const {data,loading} = useFetch('http://localhost:8000/product')
+    const data = product
     const {searchbar} = useContext(AppContext)
 
     const filterdata = data ?
@@ -14,9 +14,6 @@ const Shop2 = () => {
     ) : []
     return ( 
        <div>
-        <div >
-           {loading && <div className=" font-bold text-xl flex items-center justify-center py-20">loading...</div>}
-        </div>
 
 
        <div className="productcard  grid md:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-2 md:gap-4 m-5">

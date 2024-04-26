@@ -2,10 +2,11 @@
 import Hero from "../assets/modelcover.jpg"
 import Footer from "./footer";
 import useFetch from "./fetch";
+import { NewArrivals } from "../db";
 import Star from '../assets/star.svg'
 import Cart from '../assets/cart.svg'
 const Home = () => {
-  const {data}= useFetch(' http://localhost:8000/NewArrivals')
+  const data = NewArrivals 
     return ( 
       <div className="">
         <div className="home w-screen  grid lg:grid-cols-2 gap-5  md:gap-7  ">

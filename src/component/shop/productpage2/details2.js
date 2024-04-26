@@ -4,12 +4,13 @@ import Sizebar from "../../sizebar";
 import Quantity from "../../quantity";
 import Totalprice from "../../totalprice";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { product } from "../../../db";
 import { useState,useEffect } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { Addtocart } from "../../../redux/cartSlice";
 const ProductDetails = () => {
     const {id} = useParams()
-    const {data,loading} = useFetch('http://localhost:8000/product/'+id)
+    let data = product.find((e)=>e.id===id)
     const [isAddedToCart, setAddedToCart] = useState(false);
     const cartItems = useSelector((items)=>items.cart.cart)
     const [childQuantity,setquantity]= useState('')
@@ -21,7 +22,6 @@ const ProductDetails = () => {
         // Check if the current product is in the cart
         const isProductInCart = cartItems.some((item) => data && item.id === data.id);
         setAddedToCart(isProductInCart);
-        console.log(id)
       }, [isAddedToCart,cartItems]);
     const addCart=()=>{
        const modifieddata={
@@ -35,9 +35,9 @@ const ProductDetails = () => {
 
     return ( 
         <div>
-             <div >
+             {/* <div >
             {loading && <div className=" font-bold text-xl flex items-center justify-center py-20">loading...</div>}
-         </div>
+         </div> */}
 
      
          { data && (
